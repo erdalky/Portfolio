@@ -42,7 +42,7 @@ body {
 
 @font-face {
   font-family: "MyFont";
-  src: url("fonts/Gliker-Black.woff") format("woff");
+  src: url("fonts/NewYork PERSONAL USE.otf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -215,7 +215,7 @@ header {
 
 #main-nav a {
   font-family: "MyFont", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   display: block;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
@@ -278,7 +278,7 @@ section h2 {
 }
 
 .big-text {
-  font-size: 2.5rem;
+  font-size: clamp(3rem, 6vw, 4.5rem);
   margin-bottom: var(--spacing-md);
   color: transparent;
   -webkit-text-stroke: 2px var(--primary-color);
@@ -286,7 +286,7 @@ section h2 {
 }
 
 .sub-text {
-  font-size: 1.2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: var(--spacing-md);
   color: var(--primary-color);
   display: flex;
@@ -309,7 +309,7 @@ section h2 {
   align-items: center;
   justify-content: center;
   font-family: "MyFont", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: var(--spacing-md) var(--spacing-lg);
   border-radius: var(--border-radius);
   white-space: nowrap;
@@ -442,13 +442,6 @@ body {
     height: 1000px;
   }
 
-  .big-text {
-    font-size: 3.5rem;
-  }
-
-  .sub-text {
-    font-size: 1.5rem;
-  }
 }
 
 /* Desktop */
@@ -462,9 +455,6 @@ body {
     right: -5%;
   }
 
-  .big-text {
-    font-size: 3rem;
-  }
 }
 
 /* Small Desktop / Large Tablet */
@@ -482,9 +472,6 @@ body {
     padding-right: var(--spacing-md);
   }
 
-  .big-text {
-    font-size: 2.8rem;
-  }
 }
 
 /* Tablet */
@@ -500,11 +487,6 @@ body {
     padding-right: 0;
     text-align: center;
     order: 2;
-  }
-
-  .big-text {
-    font-size: 2.5rem;
-    -webkit-text-stroke: 1.5px var(--primary-color);
   }
 
   .character-container {
@@ -536,15 +518,6 @@ body {
 @media (max-width: 768px) {
   .section {
     padding: var(--spacing-lg) var(--spacing-md);
-  }
-
-  .big-text {
-    font-size: 2.2rem;
-    -webkit-text-stroke: 1px var(--primary-color);
-  }
-
-  .sub-text {
-    font-size: 1.1rem;
   }
 
   .direction-arrows {
@@ -588,13 +561,6 @@ body {
 
 /* Small Mobile */
 @media (max-width: 480px) {
-  .big-text {
-    font-size: 1.8rem;
-  }
-
-  .sub-text {
-    font-size: 1rem;
-  }
 
   .character {
     width: 280px;
@@ -624,9 +590,6 @@ body {
 
 /* Very Small Mobile / Landscape Mode */
 @media (max-width: 380px) or (max-height: 500px) {
-  .big-text {
-    font-size: 1.5rem;
-  }
 
   .character {
     width: 220px;
@@ -676,15 +639,6 @@ body {
   .logo img {
     height: 90px;
     top: -20px;
-  }
-
-  .big-text {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-  }
-
-  .sub-text {
-    margin-bottom: 5px;
   }
 
   .direction-arrows {

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>erdal | contact</title>
+    <title>erdal | projects</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="contact-styles.css">
+    <link rel="stylesheet" href="projects-styles.css">
     <link rel="icon" type="image/png" href="img/kafa.png">
 </head>
 <body class="light-mode">
@@ -20,9 +20,9 @@
 
     <header>
         <div class="logo">
-        <a href="index.html">
-            <img src="img/logo.png" alt="Erdal's Logo">
-        </a>
+            <a href="index.html">
+                <img src="img/logo.png" alt="Erdal's Logo">
+            </a>
         </div>
         <div class="header-controls">
             <button id="theme-toggle" class="control-btn">
@@ -56,47 +56,28 @@
     </nav>
 
     <main>
-        <section id="contact" class="section">
-            <div class="contact-container">
-                <div class="contact-header">
+        <section id="projects" class="section">
+            <div class="projects-container">
+                <div class="projects-header">
                     <div class="divider-line"></div>
-                    <h1 class="contact-title">Contact</h1>
+                    <h1 class="projects-title">Projects</h1>
                     <div class="divider-line"></div>
                 </div>
                 
-                <div class="contact-content">
-                    <div class="contact-column left-column">
-                        <a href="tel:+19452323044" class="contact-item">
-                            <div class="contact-label">Phone</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">+1 (945) 232-3044</div>
-                        </a>
-                        
-                        <a href="https://github.com/erdalky" target="_blank" class="contact-item">
-                            <div class="contact-label">GitHub</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">github.com/erdal</div>
-                        </a>
-                    </div>
-                    
-                    <div class="contact-column right-column">
-                        <a href="mailto:erdallkayaaa7@gmail.com" class="contact-item">
-                            <div class="contact-label">Mail</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">erdallkayaaa7@gmail.com</div>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/in/erdal-kaya/" target="_blank" class="contact-item">
-                            <div class="contact-label">LinkedIn</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">linkedin.com/in/erdal</div>
-                        </a>
-                    </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">all</button>
+                    <button class="filter-btn" data-filter="featured">ai</button>
+                </div>
+                
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be dynamically inserted here -->
                 </div>
             </div>
         </section>
     </main>
 
+    <script src="projects.js"></script>
+    <script src="projects-display.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

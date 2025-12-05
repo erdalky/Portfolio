@@ -82,7 +82,7 @@
 
 .contact-label {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
   margin-right: 10px;
   white-space: nowrap;
@@ -100,7 +100,7 @@
 }
 
 .contact-value {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--primary-color);
   opacity: 0.9;
   overflow: hidden;
