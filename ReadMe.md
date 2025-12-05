@@ -1,46 +1,59 @@
-🌐 Personal Portfolio — Erdal Kaya
+Personal Portfolio Website
 
-Welcome to my personal portfolio repository!
-This project showcases my work, skills, and background through a fully custom-built website.
+A modern, responsive portfolio website built to showcase my projects, skills, and experience.
+Designed with a clean aesthetic and smooth animations, the site adapts beautifully across all screen sizes.
 
-🚀 About the Project
+🚀 Features
+🔷 Responsive UI/UX
 
-This portfolio was designed and developed from scratch using:
+Fully responsive layout for desktop, tablet, and mobile
 
-HTML / CSS / JavaScript
+Smooth transitions and animations
 
-Responsive UI/UX design
+Clean, minimal design
 
-Custom animations
+🔷 Projects Page
 
-Dark/Light mode
+Dynamic project filtering (All, Featured, Web, Design)
 
-Dynamic project rendering
+Custom JavaScript project loader
 
-The website includes:
+Auto-generated project cards with tags, descriptions, and links
 
-💼 Projects — showcase of my software development work
+🔷 About Section
 
-👤 About Me — background, experience, and interests
+Introduction, background, and personal summary
 
-📬 Contact — ways to get in touch
+Smooth image + text layout
 
-📝 Resume button — automatically opens email with a pre-filled message
+Email shortcut for quick contact
 
-🛠 Technologies Used
+🔷 Contact & Resume
+
+Auto-generated email link (mailto:) with prewritten subject & body
+
+Styled resume button
+
+Easy access to contact information
+
+🔷 Theme Support
+
+Light/Dark mode toggle
+
+Persistent theme behavior using JavaScript
+
+📁 Tech Stack
 
 HTML5
 
-CSS3 (custom design, no frameworks)
+CSS3
 
-Vanilla JavaScript
+JavaScript (Vanilla)
 
-Git & GitHub
+No frameworks — built from scratch
 
-🌍 Live Demo
+📬 Contact
 
-Coming soon…
+For questions or collaboration opportunities:
 
-📫 Contact
-
-Email: erdallkayaaa7@gmail.com
+📧 erdallkayaaa7@gmail.com
