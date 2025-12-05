@@ -1,7 +1,6 @@
-Personal Portfolio Website
+Portfolio Website
 
-A modern, responsive portfolio website built to showcase my projects, skills, and experience.
-Designed with a clean aesthetic and smooth animations, the site adapts beautifully across all screen sizes.
+A modern, responsive personal website built to showcase my projects, skills, and background.
 
 🚀 Features
 🔷 Responsive UI/UX
@@ -10,39 +9,41 @@ Fully responsive layout for desktop, tablet, and mobile
 
 Smooth transitions and animations
 
-Clean, minimal design
+Clean, minimal visual design
 
 🔷 Projects Page
 
-Dynamic project filtering (All, Featured, Web, Design)
+Category filtering (All, Featured, Web, Design)
 
-Custom JavaScript project loader
+Auto-generated project cards
 
-Auto-generated project cards with tags, descriptions, and links
+Custom thumbnails, descriptions, and GitHub/live links
 
 🔷 About Section
 
-Introduction, background, and personal summary
+Personal introduction and background
 
-Smooth image + text layout
+Profile image + text layout
 
-Email shortcut for quick contact
+Styled resume button with auto-email shortcut
 
 🔷 Contact & Resume
 
-Auto-generated email link (mailto:) with prewritten subject & body
+Pre-written mailto: email link
 
-Styled resume button
+Easy navigation to contact options
 
-Easy access to contact information
+Accessible design with clear CTAs
 
 🔷 Theme Support
 
 Light/Dark mode toggle
 
-Persistent theme behavior using JavaScript
+Animated transitions
 
-📁 Tech Stack
+Theme persists across pages
+
+🛠️ Tech Stack
 
 HTML5
 
@@ -50,10 +51,7 @@ CSS3
 
 JavaScript (Vanilla)
 
-No frameworks — built from scratch
-
 📬 Contact
 
-For questions or collaboration opportunities:
-
-📧 erdallkayaaa7@gmail.com
+Feel free to reach out:
+erdallkayaaa7@gmail.com
