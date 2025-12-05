@@ -37,22 +37,6 @@ Vanilla JavaScript
 
 Git & GitHub
 
-📁 File Structure
-Portfolio/
-│── index.html
-│── about.html
-│── projects.html
-│── contact.html
-│── styles.css
-│── about-styles.css
-│── projects-styles.css
-│── script.js
-│── projects.js
-│── projects-display.js
-│── img/
-│── files/
-└── README.md
-
 🌍 Live Demo
 
 Coming soon…
