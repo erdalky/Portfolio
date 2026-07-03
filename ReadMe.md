@@ -1,45 +1,39 @@
 # Portfolio Website
 
-A modern, responsive personal website built to showcase my projects, skills, and background.
+A retro pixel-game personal website. The homepage is a tiny walkable 2D world
+rendered on an HTML canvas — walk into the "ABOUT" sign or the "MAIL" box to
+enter that page.
 
 ---
 
 ## 🚀 Features
 
-### 🔷 Responsive UI/UX
-- Fully responsive layout for desktop, tablet, and mobile
-- Smooth transitions and animations
-- Clean, minimal visual design
-
-### 🔷 Projects Page
-- Category filtering (All, Featured, Web, Design)
-- Auto-generated project cards
-- Custom thumbnails, descriptions, and GitHub/live links
+### 🔷 Walkable pixel world (home)
+- Canvas-based tile map with obstacles and two portals
+- Keyboard (arrows / WASD) and on-screen D-pad controls for touch devices
+- Walking into a portal triggers a fade transition into that page
 
 ### 🔷 About Section
-- Personal introduction and background
-- Profile image + text layout
-- Styled resume button with auto-email shortcut
+- Personal introduction and background, styled as a retro dialogue box
+- Profile image + bio text
 
-### 🔷 Contact & Resume
+### 🔷 Contact
 - Pre-written `mailto:` email link
-- Easy navigation to contact options
-- Clear, accessible CTA design
+- Retro "inventory slot" style contact list
 
-### 🔷 Theme Support
-- Light/Dark mode toggle
-- Animated transitions
-- Theme persists across pages
+### 🔷 Day / Night toggle
+- Swaps the whole palette (sky, grass, UI) between a day and night theme
+- Persists across pages via `localStorage`
 
 ---
 
 ## 🛠️ Tech Stack
-- **HTML5**
+- **HTML5 Canvas** (game rendering)
 - **CSS3**
 - **JavaScript (Vanilla)**
 
 ---
 
 ## 📬 Contact
-Feel free to reach out:  
+Feel free to reach out:
 **erdallkayaaa7@gmail.com**

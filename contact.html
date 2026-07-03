@@ -1,102 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>erdal | contact</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="contact-styles.css">
-    <link rel="icon" type="image/png" href="img/kafa.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>erdal | contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact-styles.css" />
+  <link rel="icon" type="image/png" href="img/kafa.png" />
 </head>
-<body class="light-mode">
-    
-    <div class="background-container">
-        <div class="background-option bg-option-1 active"></div>
-        <div class="background-option bg-option-2"></div>
-        <div class="background-option bg-option-3"></div>
+<body class="dark-mode">
+
+  <div class="crt-scanlines"></div>
+
+  <header>
+    <div class="logo"><a href="index.html">erdal</a></div>
+    <div class="header-controls">
+      <button id="theme-toggle" class="control-btn" aria-label="Toggle day/night">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button id="menu-toggle" class="control-btn" aria-label="Open menu">
+        <div class="grid-icon">
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+        </div>
+      </button>
     </div>
-    
-    <div class="blur-overlay"></div>
+  </header>
 
-    <header>
-        <div class="logo">
-        <a href="index.html">
-            <img src="img/logo.png" alt="Erdal's Logo">
-        </a>
+  <nav id="main-nav" class="hidden">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="contact" class="section">
+      <div class="pixel-panel contact-container">
+        <p class="page-label">get in touch</p>
+        <h1 class="contact-title">let's work<br>together.</h1>
+        <p class="contact-subtitle">open to collaborations and interesting problems.</p>
+
+        <div class="contact-list">
+          <a href="mailto:erdallkayaaa7@gmail.com" class="contact-item">
+            <span class="contact-label">mail</span>
+            <span class="contact-value">erdallkayaaa7@gmail.com</span>
+            <span class="contact-arrow">&gt;</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/erdal-kaya/" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">linkedin</span>
+            <span class="contact-value">linkedin.com/in/erdal-kaya</span>
+            <span class="contact-arrow">&gt;</span>
+          </a>
+
+          <a href="https://github.com/erdalky" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">github</span>
+            <span class="contact-value">github.com/erdalky</span>
+            <span class="contact-arrow">&gt;</span>
+          </a>
+
+          <a href="tel:+19452323044" class="contact-item">
+            <span class="contact-label">phone</span>
+            <span class="contact-value">+1 (945) 232-3044</span>
+            <span class="contact-arrow">&gt;</span>
+          </a>
         </div>
-        <div class="header-controls">
-            <button id="theme-toggle" class="control-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <button id="menu-toggle" class="control-btn">
-                <div class="grid-icon">
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                </div>
-            </button>
-        </div>
-    </header>
 
-    <nav id="main-nav" class="hidden">
-        <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="projects.html">projects</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="contact.html">contact</a></li>
-        </ul>
-    </nav>
+        <a class="pixel-btn" href="index.html">&lt; back to world</a>
+      </div>
+    </section>
+  </main>
 
-    <main>
-        <section id="contact" class="section">
-            <div class="contact-container">
-                <div class="contact-header">
-                    <div class="divider-line"></div>
-                    <h1 class="contact-title">Contact</h1>
-                    <div class="divider-line"></div>
-                </div>
-                
-                <div class="contact-content">
-                    <div class="contact-column left-column">
-                        <a href="tel:+19452323044" class="contact-item">
-                            <div class="contact-label">Phone</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">+1 (945) 232-3044</div>
-                        </a>
-                        
-                        <a href="https://github.com/erdalky" target="_blank" class="contact-item">
-                            <div class="contact-label">GitHub</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">github.com/erdal</div>
-                        </a>
-                    </div>
-                    
-                    <div class="contact-column right-column">
-                        <a href="mailto:erdallkayaaa7@gmail.com" class="contact-item">
-                            <div class="contact-label">Mail</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">erdallkayaaa7@gmail.com</div>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/in/erdal-kaya/" target="_blank" class="contact-item">
-                            <div class="contact-label">LinkedIn</div>
-                            <div class="contact-arrow">→</div>
-                            <div class="contact-value">linkedin.com/in/erdal</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,121 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>erdal</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="img/kafa.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>erdal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="game-styles.css" />
+  <link rel="icon" type="image/png" href="img/kafa.png" />
 </head>
-<body class="light-mode">
-    
-    <div class="background-container">
-        <div class="background-option bg-option-1 active"></div>
-        <div class="background-option bg-option-2"></div>
-        <div class="background-option bg-option-3"></div>
+<body class="dark-mode">
+
+  <div class="crt-scanlines"></div>
+
+  <header>
+    <div class="logo"><a href="index.html">erdal</a></div>
+    <div class="header-controls">
+      <button id="theme-toggle" class="control-btn" aria-label="Toggle day/night">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button id="menu-toggle" class="control-btn" aria-label="Open menu">
+        <div class="grid-icon">
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+        </div>
+      </button>
     </div>
+  </header>
 
-    <header>
-        <div class="logo">
-        <a href="index.html">
-            <img src="img/logo.png" alt="Erdal's Logo">
-        </a>
+  <nav id="main-nav" class="hidden">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="section game-section">
+      <div id="game-wrap" class="game-wrap">
+        <canvas id="game-canvas"></canvas>
+
+        <div id="label-about" class="portal-label label-about" style="left:21.9%; top:20.8%;">ABOUT</div>
+        <div id="label-contact" class="portal-label label-contact" style="left:84.4%; top:20.8%;">CONTACT</div>
+
+        <div id="title-screen" class="title-screen">
+          <div class="pixel-panel title-panel">
+            <p class="title-eyebrow">cs student &middot; smu &middot; portfolio.exe</p>
+            <h1 class="title-heading">ERDAL<span class="blink-cursor">_</span></h1>
+            <p class="title-sub">a tiny world about a guy who builds things</p>
+            <p class="press-start">press any key / tap to start</p>
+          </div>
         </div>
-        <div class="header-controls">
-            <button id="theme-toggle" class="control-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <button id="menu-toggle" class="control-btn">
-                <div class="grid-icon">
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                    <div class="grid-dot"></div>
-                </div>
-            </button>
+
+        <div id="touch-controls" class="touch-controls">
+          <div class="dpad">
+            <button class="dpad-btn dpad-up"    data-dir="up"    aria-label="Up">▲</button>
+            <button class="dpad-btn dpad-left"  data-dir="left"  aria-label="Left">◀</button>
+            <button class="dpad-btn dpad-right" data-dir="right" aria-label="Right">▶</button>
+            <button class="dpad-btn dpad-down"  data-dir="down"  aria-label="Down">▼</button>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <nav id="main-nav" class="hidden">
-        <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="projects.html">projects</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="contact.html">contact</a></li>
-        </ul>
-    </nav>
+      <p class="game-caption">walk into <span class="tag-about">ABOUT</span> or <span class="tag-contact">CONTACT</span> to enter</p>
+    </section>
+  </main>
 
-    <main>
-        <section id="home" class="section">
-            <div class="home-content">
-                <div class="intro-text">
-                    <h1 class="big-text">hey! this is erdal</h1>
-                    <p class="sub-text">
-                       I'm<span class="typewrite" data-text='["a CS student at SMU"]'></span>
-                      </p>
-                    <div class="direction-arrows">
-                        <a href="projects.html" class="arrow-link left">
-                            <span class="arrow">→</span>
-                            <span class="arrow-text">see my projects</span>
-                        </a>
-                        <a href="about.html" class="arrow-link right">
-                            <span class="arrow">→</span>
-                            <span class="arrow-text">more about me</span>
-                            
-                        </a>
-                    </div>
-                </div>
-                <div class="character-container">
-                    <div class="character">
-                        <img src="img/erdal.png" alt="Cartoon Erdal">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  <footer>
+    <span>erdal kaya · smu cs</span>
+  </footer>
 
-
-    <script src="script.js"></script>
-    <script>
-        const el = document.querySelector(".typewrite");
-        const phrases = JSON.parse(el.getAttribute("data-text"));
-        let txt = "";
-        let i = 0;
-        let isDeleting = false;
-        let speed = 100;
-      
-        function type() {
-          const current = phrases[i];
-          
-          if (isDeleting) {
-            txt = current.substring(0, txt.length - 1);
-          } else {
-            txt = current.substring(0, txt.length + 1);
-          }
-      
-          el.innerHTML = txt;
-      
-          if (!isDeleting && txt === current) {
-            isDeleting = true;
-            setTimeout(type, 1000);
-          } else if (isDeleting && txt === "") {
-            isDeleting = false;
-            i = (i + 1) % phrases.length;
-            setTimeout(type, 500);
-          } else {
-            setTimeout(type, speed);
-          }
-        }
-      
-        type();
-      </script>
-      
+  <script src="script.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
