@@ -1,7 +1,7 @@
 # Portfolio Website
 
 A retro pixel-game personal website. The homepage is a tiny walkable 2D world
-rendered on an HTML canvas — walk into the "ABOUT" sign or the "MAIL" box to
+rendered on an HTML canvas — walk into the "ABOUT" sign or the "CONTACT" box to
 enter that page.
 
 ---
