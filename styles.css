@@ -10,6 +10,7 @@
   --muted:      rgba(244,241,222,0.62);
   --accent:     #ffd23f;
   --accent-2:   #4cc9f0;
+  --accent-3:   #c77dff;
   --accent-dim: rgba(255,210,63,0.14);
   --border:     #f4f1de;
   --slot-bg:    rgba(255,255,255,0.06);
@@ -30,6 +31,7 @@ body.light-mode {
   --muted:      rgba(22,35,61,0.65);
   --accent:     #e07b00;
   --accent-2:   #0077b6;
+  --accent-3:   #7b2cbf;
   --accent-dim: rgba(224,123,0,0.12);
   --border:     #16233d;
   --slot-bg:    rgba(0,0,0,0.05);
@@ -253,6 +255,18 @@ header {
 .pixel-btn:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 rgba(0,0,0,0.4);
+}
+
+.pixel-btn-accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.pixel-btn-accent:hover { background: var(--accent-dim); }
+
+/* ─── FOCUS ──────────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
 }
 
 /* ─── REVEAL ANIMATIONS ──────────────────────────────────────────────────────── */

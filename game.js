@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ── World: paths, obstacles, portals ──────────────────────────────────── */
   function isPath(col, row) {
-    if (col === 8 && row >= 4 && row <= 10) return true;               // spawn -> junction
+    if (col === 8 && row >= 2 && row <= 10) return true;               // spawn -> junction -> projects
     if (row === 4 && col >= 3 && col <= 13) return true;              // junction crossbar
     if (col === 3 && row >= 2 && row <= 4) return true;               // up to about
     if (col === 13 && row >= 2 && row <= 4) return true;              // up to contact
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { col: 14, row: 4, type: "rock" }, { col: 14, row: 7, type: "tree" },
     { col: 6,  row: 1, type: "tree" }, { col: 10, row: 1, type: "tree" },
     { col: 5,  row: 7, type: "rock" }, { col: 11, row: 7, type: "rock" },
-    { col: 8,  row: 1, type: "tree" },
+    { col: 6,  row: 2, type: "rock" }, { col: 10, row: 2, type: "rock" },
     { col: 2,  row: 10, type: "tree" }, { col: 13, row: 10, type: "tree" },
     { col: 5,  row: 10, type: "rock" }, { col: 10, row: 10, type: "rock" },
     { col: 1,  row: 9, type: "rock" }, { col: 14, row: 9, type: "rock" },
@@ -41,9 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }));
 
   const PORTALS = [
-    { name: "about",   url: "about.html",   col: 3,  row: 2, x: 3 * TILE, y: 2 * TILE, w: TILE, h: TILE * 2, color: "accent" },
-    { name: "contact", url: "contact.html", col: 13, row: 2, x: 13 * TILE, y: 2 * TILE, w: TILE, h: TILE * 2, color: "accent2" },
-  ];
+    { name: "about",    url: "about.html",    col: 3,  row: 2, sign: "signAbout",    shape: "board"   },
+    { name: "projects", url: "projects.html", col: 8,  row: 2, sign: "signProjects", shape: "monitor" },
+    { name: "contact",  url: "contact.html",  col: 13, row: 2, sign: "signContact",  shape: "mailbox" },
+  ].map(p => ({
+    ...p,
+    x: p.col * TILE, y: p.row * TILE, w: TILE, h: TILE * 2,
+  }));
 
   /* ── Player ─────────────────────────────────────────────────────────────── */
   const player = {
@@ -105,8 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function palette() {
     const day = document.body.classList.contains("light-mode");
     return day
-      ? { grass: "#52b788", alt: "#40916c", path: "#c68b59", pathEdge: "#a9744f", trunk: "#6b4a2f", leaf: "#2d6a4f", rock: "#9fa6ad", rockDark: "#767d85" }
-      : { grass: "#1b4332", alt: "#143a29", path: "#6b4a2f", pathEdge: "#4a3728", trunk: "#4a3728", leaf: "#14532d", rock: "#4a5560", rockDark: "#33393f" };
+      ? { grass: "#52b788", alt: "#40916c", path: "#c68b59", pathEdge: "#a9744f", trunk: "#6b4a2f", leaf: "#2d6a4f", rock: "#9fa6ad", rockDark: "#767d85",
+          post: "#5c4530", screen: "#16233d", signAbout: "#ffd23f", signProjects: "#c77dff", signContact: "#4cc9f0" }
+      : { grass: "#1b4332", alt: "#143a29", path: "#6b4a2f", pathEdge: "#4a3728", trunk: "#4a3728", leaf: "#14532d", rock: "#4a5560", rockDark: "#33393f",
+          post: "#5c4530", screen: "#0b1224", signAbout: "#ffd23f", signProjects: "#c77dff", signContact: "#4cc9f0" };
   }
 
   /* ── Render ─────────────────────────────────────────────────────────────── */
@@ -143,17 +149,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function drawPortalMarker(p, pal) {
-    const isAbout = p.name === "about";
     const postX = p.x + p.w / 2 - 2;
-    ctx.fillStyle = "#5c4530";
+    ctx.fillStyle = pal.post;
     ctx.fillRect(postX, p.y + 6, 4, TILE + 6);
-    ctx.fillStyle = isAbout ? "#ffd23f" : "#4cc9f0";
-    if (isAbout) {
+
+    const sign = pal[p.sign];
+    ctx.fillStyle = sign;
+
+    if (p.shape === "board") {
       ctx.fillRect(postX - 1, p.y - 2, 20, 10);
-    } else {
+    } else if (p.shape === "mailbox") {
       ctx.fillRect(postX - 6, p.y, 14, 10);
-      ctx.fillStyle = "#0b1224";
+      ctx.fillStyle = pal.screen;
       ctx.fillRect(postX - 4, p.y + 2, 10, 5);
+    } else {
+      // monitor: a lit screen with two lines of "code" on it
+      ctx.fillRect(postX - 8, p.y - 2, 18, 12);
+      ctx.fillStyle = pal.screen;
+      ctx.fillRect(postX - 6, p.y, 14, 8);
+      ctx.fillStyle = sign;
+      ctx.fillRect(postX - 4, p.y + 2, 5, 2);
+      ctx.fillRect(postX - 4, p.y + 5, 9, 2);
     }
   }
 
@@ -197,10 +213,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ── Portal label DOM elements pulse when player is inside trigger ────── */
-  const labelEls = {
-    about: document.getElementById("label-about"),
-    contact: document.getElementById("label-contact"),
-  };
+  const labelEls = Object.fromEntries(
+    PORTALS.map(p => [p.name, document.getElementById(`label-${p.name}`)])
+  );
 
   function fadeAndGo(url) {
     if (transitioning) return;

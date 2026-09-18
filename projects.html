@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>erdal | projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="projects-styles.css" />
+  <link rel="icon" type="image/png" href="img/kafa.png" />
+</head>
+<body class="dark-mode">
+
+  <div class="crt-scanlines"></div>
+
+  <header>
+    <div class="logo"><a href="index.html">erdal</a></div>
+    <div class="header-controls">
+      <button id="theme-toggle" class="control-btn" aria-label="Toggle day/night">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button id="menu-toggle" class="control-btn" aria-label="Open menu">
+        <div class="grid-icon">
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <nav id="main-nav" class="hidden">
+    <ul>
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="projects" class="section projects-section">
+      <div class="pixel-panel projects-container">
+        <p class="page-label">projects</p>
+        <h1 class="projects-title">stuff i<br>actually shipped.</h1>
+        <p class="projects-subtitle">a few things I built end to end — problem, code, and the part where it has to work for someone else.</p>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-heading">
+                <h2 class="project-name">Route Optimizer</h2>
+                <p class="project-context">Miniature Harvest · internship</p>
+              </div>
+              <span class="project-status status-live">live</span>
+            </div>
+            <p class="project-desc">
+              A delivery team was planning twelve-stop runs by hand, about thirty minutes
+              every morning. I modelled the route as a traffic-aware Traveling Salesman
+              Problem with fixed start and end points, put it behind a REST API, and gave
+              them a phone-first interface with address autocomplete, drag-and-drop
+              overrides, and one-click navigation. Planning now takes under two minutes,
+              and one existing route came back about an hour and a half shorter.
+            </p>
+            <ul class="project-stack">
+              <li>Python</li>
+              <li>OR-Tools</li>
+              <li>FastAPI</li>
+              <li>Pydantic</li>
+              <li>Google Maps API</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-link project-link-accent" href="https://routeoptimizer.me" target="_blank" rel="noopener">open it &gt;</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-heading">
+                <h2 class="project-name">Gesture-Controlled Football</h2>
+                <p class="project-context">personal project</p>
+              </div>
+              <span class="project-status status-source">source</span>
+            </div>
+            <p class="project-desc">
+              A football game you play with your hands instead of a keyboard. A webcam
+              feed goes through MediaPipe into a PyTorch LSTM that reads thirty-frame
+              hand-landmark sequences as five different actions. The model is exported to
+              ONNX and runs inside a native C++17 game built on raylib, so live gestures
+              turn into player movement in real time. Normalizing landmarks against the
+              wrist was what stopped it from guessing based on where your hand sat on
+              screen.
+            </p>
+            <ul class="project-stack">
+              <li>C++17</li>
+              <li>raylib</li>
+              <li>PyTorch</li>
+              <li>ONNX Runtime</li>
+              <li>OpenCV</li>
+              <li>MediaPipe</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/erdalky/gesture-football" target="_blank" rel="noopener">code &gt;</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-heading">
+                <h2 class="project-name">Reimbursement Workflow</h2>
+                <p class="project-context">Raindrop Education</p>
+              </div>
+              <span class="project-status status-live">live</span>
+            </div>
+            <p class="project-desc">
+              Staff at a $1.2M education department were retyping receipts into forms,
+              roughly an hour a week. This reads the receipts in the browser with
+              Tesseract.js and fills the paperwork itself. Nothing leaves the user's
+              machine, which mattered more than speed here. Preparation dropped from about
+              an hour to about fifteen minutes across roughly ten reimbursements a week.
+            </p>
+            <ul class="project-stack">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Tesseract.js</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-link project-link-accent" href="https://reimbursement-academy.pages.dev" target="_blank" rel="noopener">open it &gt;</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-heading">
+                <h2 class="project-name">Open House Portal</h2>
+                <p class="project-context">Raindrop Education</p>
+              </div>
+              <span class="project-status status-live">live</span>
+            </div>
+            <p class="project-desc">
+              Check-in and information for an open house serving around eighty students and
+              their parents, driven by QR codes that generate per session so last-minute
+              changes don't invalidate anything already printed. Tested with Vitest and
+              deployed through GitHub Actions, because this one had to work on the day with
+              nobody available to fix it.
+            </p>
+            <ul class="project-stack">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Vitest</li>
+              <li>GitHub Actions</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-link project-link-accent" href="https://md-open-house.pages.dev" target="_blank" rel="noopener">open it &gt;</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-heading">
+                <h2 class="project-name">Parent Report Generator</h2>
+                <p class="project-context">Raindrop Education</p>
+              </div>
+              <span class="project-status status-live">live</span>
+            </div>
+            <p class="project-desc">
+              Around thirty mentors were writing the same progress updates by hand in
+              three different formats. They now fill one form and get a PDF, a Word file,
+              or a WhatsApp-ready message out the other end. Unglamorous, and the tool
+              people actually thank me for.
+            </p>
+            <ul class="project-stack">
+              <li>React</li>
+              <li>Next.js</li>
+              <li>TypeScript</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-link project-link-accent" href="https://parents-message.pages.dev" target="_blank" rel="noopener">open it &gt;</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <div class="project-heading">
+                <h2 class="project-name">Spectral Peak Detection</h2>
+                <p class="project-context">SMU · research fellow</p>
+              </div>
+              <span class="project-status status-building">in revision</span>
+            </div>
+            <p class="project-desc">
+              Finding peaks in rotational spectroscopy data with a multi-kernel 1D CNN,
+              rebuilt for an ACS Omega revision. The pipeline turns 70,673 Parquet spectra
+              into 68 sharded TFRecord datasets and trains on A100 GPUs through Slurm. The
+              part I learned most from was an AUC collapse: I derived the loss function's
+              degenerate minimum on paper, then traced it to single-point labels sitting on
+              features that span several points.
+            </p>
+            <ul class="project-stack">
+              <li>Python</li>
+              <li>TensorFlow</li>
+              <li>Slurm</li>
+              <li>Linux</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <section class="coursework">
+          <h2 class="coursework-heading">coursework</h2>
+          <p class="coursework-note">
+            Data structures and algorithms written from scratch for SMU classes —
+            no standard-library shortcuts.
+          </p>
+          <ul class="coursework-list">
+            <li>
+              <a href="https://github.com/erdalky/E-commerce" target="_blank" rel="noopener">
+                <span class="cw-name">E-commerce Product Manager</span>
+                <span class="cw-desc">A left-leaning red-black tree and a hand-written CSV parser, indexing real Amazon product data for O(log n) lookup.</span>
+                <span class="cw-lang">Java</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/erdalky/Intelligent-Agents-Vacuum-cleaner-World" target="_blank" rel="noopener">
+                <span class="cw-name">Vacuum-Cleaner Agents</span>
+                <span class="cw-desc">Three agent architectures — random, reflex, and model-based — raced on the same grid to see how much an internal state is worth.</span>
+                <span class="cw-lang">Python</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/erdalky/Greedy-Heaps" target="_blank" rel="noopener">
+                <span class="cw-name">Greedy Heaps</span>
+                <span class="cw-desc">A generic min-heap with swim, sink, and dynamic resizing, subclassed to solve a cookie-combining problem and a pizza-shop scheduler.</span>
+                <span class="cw-lang">Java</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/erdalky/Linked-Lists-and-Stacks" target="_blank" rel="noopener">
+                <span class="cw-name">Linked Lists &amp; Stacks</span>
+                <span class="cw-desc">Josephus elimination on a hand-built queue, bracket matching on a resizing stack, and in-place duplicate removal from a linked list.</span>
+                <span class="cw-lang">Java</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/erdalky/Transaction-Sorting" target="_blank" rel="noopener">
+                <span class="cw-name">Transaction Sorting</span>
+                <span class="cw-desc">Selection, insertion, merge, and quick sort implemented by hand, then timed against each other on large generated datasets.</span>
+                <span class="cw-lang">Java</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <div class="projects-actions">
+          <a class="pixel-btn" href="index.html">&lt; world</a>
+          <a class="pixel-btn pixel-btn-accent" href="https://github.com/erdalky" target="_blank" rel="noopener">all repos &gt;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

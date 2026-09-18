@@ -25,8 +25,9 @@
   color: var(--muted);
   text-align: center;
 }
-.tag-about   { color: var(--accent);   font-weight: 600; }
-.tag-contact { color: var(--accent-2); font-weight: 600; }
+.tag-about    { color: var(--accent);   font-weight: 600; }
+.tag-projects { color: var(--accent-3); font-weight: 600; }
+.tag-contact  { color: var(--accent-2); font-weight: 600; }
 
 /* ─── TITLE SCREEN ─────────────────────────────────────────────────────────────── */
 .title-screen {
@@ -88,8 +89,9 @@
   pointer-events: none;
   animation: floatLabel 2.2s ease-in-out infinite;
 }
-.label-about   { color: var(--sky); background: var(--accent); }
-.label-contact { color: var(--sky); background: var(--accent-2); }
+.label-about    { color: var(--sky); background: var(--accent);   }
+.label-projects { color: var(--sky); background: var(--accent-3); animation-delay: -0.7s; }
+.label-contact  { color: var(--sky); background: var(--accent-2); animation-delay: -1.4s; }
 
 @keyframes floatLabel {
   0%, 100% { margin-top: 0px; }

@@ -1,0 +1,233 @@
+/* ─── PROJECTS PAGE ──────────────────────────────────────────────────────────── */
+/* This is the only page that scrolls, so content passes under the fixed header —
+   give the header something to sit on. */
+header {
+  background: linear-gradient(180deg, var(--sky) 55%, transparent 100%);
+}
+
+/* This is the only page that can outgrow the viewport, so it scrolls while the
+   rest of the site stays locked at 100vh. */
+.projects-section {
+  justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: clamp(48px, 8vh, 80px);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-3) transparent;
+}
+.projects-section::-webkit-scrollbar { width: 10px; }
+.projects-section::-webkit-scrollbar-track { background: transparent; }
+.projects-section::-webkit-scrollbar-thumb {
+  background: var(--accent-3);
+  border: 2px solid var(--sky);
+}
+
+.projects-container {
+  max-width: 1180px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.projects-title {
+  font-family: var(--pixel);
+  font-size: clamp(1.1rem, 2.2vw + 0.6rem, 2rem);
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: clamp(10px, 1.6vh, 18px);
+}
+
+.projects-subtitle {
+  font-family: var(--mono);
+  font-size: clamp(0.78rem, 0.4vw + 0.7rem, 0.98rem);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  max-width: 62ch;
+  margin-bottom: clamp(24px, 4vh, 44px);
+}
+
+/* ─── GRID ───────────────────────────────────────────────────────────────────── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-bottom: clamp(24px, 4vh, 40px);
+}
+
+/* Cards reuse the "inventory slot" treatment from the contact page. */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vh, 16px);
+  padding: clamp(18px, 2.4vh, 26px) clamp(16px, 1.8vw, 24px);
+  border: 2px solid var(--border);
+  background: var(--slot-bg);
+  transition: background 0.15s, border-color 0.15s;
+}
+.project-card:hover,
+.project-card:focus-within {
+  background: var(--accent-dim);
+  border-color: var(--accent-3);
+}
+
+.project-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-heading { display: flex; flex-direction: column; gap: 6px; }
+
+.project-name {
+  font-family: var(--pixel);
+  font-size: clamp(0.62rem, 0.35vw + 0.55rem, 0.82rem);
+  line-height: 1.7;
+  color: var(--accent-3);
+}
+
+.project-context {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* Status is real information about the project, not decoration. */
+.project-status {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  padding: 3px 7px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.status-live     { color: var(--accent-2); }
+.status-building { color: var(--accent); }
+.status-source   { color: var(--accent-3); }
+.status-archived { color: var(--muted); }
+
+.project-desc {
+  font-size: clamp(0.85rem, 0.35vw + 0.76rem, 1rem);
+  line-height: 1.65;
+  color: var(--text);
+  opacity: 0.85;
+  flex: 1;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+.project-stack li {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  padding: 4px 8px;
+  color: var(--muted);
+  background: var(--slot-bg);
+  border: 1px solid var(--muted);
+}
+
+.project-links {
+  display: flex;
+  gap: 14px;
+  padding-top: 2px;
+}
+.project-link {
+  font-family: var(--pixel);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.project-link:hover,
+.project-link:focus-visible { color: var(--accent-3); border-bottom-color: var(--accent-3); }
+.project-link-accent { color: var(--accent); }
+.project-link-accent:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ─── COURSEWORK ─────────────────────────────────────────────────────────────── */
+/* Deliberately quieter than the project cards — a list, not a second grid. */
+.coursework {
+  margin-bottom: clamp(24px, 4vh, 40px);
+  padding-top: clamp(18px, 3vh, 28px);
+  border-top: 2px solid var(--border);
+}
+
+.coursework-heading {
+  font-family: var(--pixel);
+  font-size: clamp(0.58rem, 0.3vw + 0.5rem, 0.72rem);
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.coursework-note {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 62ch;
+  margin-bottom: clamp(12px, 2vh, 18px);
+}
+
+.coursework-list { list-style: none; }
+
+.coursework-list a {
+  display: grid;
+  grid-template-columns: minmax(150px, 210px) 1fr auto;
+  align-items: baseline;
+  gap: 16px;
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--slot-bg);
+  transition: background 0.15s;
+}
+.coursework-list a:hover,
+.coursework-list a:focus-visible { background: var(--slot-bg); }
+
+.cw-name {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.coursework-list a:hover .cw-name { color: var(--accent-3); }
+
+.cw-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.cw-lang {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.projects-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .projects-title { font-size: 0.85rem; margin-bottom: 8px; }
+  .projects-subtitle { font-size: 0.72rem; margin-bottom: 18px; }
+  .project-grid { grid-template-columns: 1fr; gap: 10px; }
+  .project-card { padding: 14px 13px; gap: 9px; }
+  .project-desc { font-size: 0.78rem; line-height: 1.5; }
+  .pixel-btn { font-size: 0.58rem; padding: 10px 14px; }
+  .coursework-list a {
+    grid-template-columns: 1fr auto;
+    gap: 4px 10px;
+    padding: 10px 6px;
+  }
+  .cw-name { grid-column: 1; }
+  .cw-lang { grid-column: 2; grid-row: 1; }
+  .cw-desc { grid-column: 1 / -1; font-size: 0.76rem; }
+}
