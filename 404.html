@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Off the map — Erdal Kaya</title>
+  <meta name="description" content="This page isn't part of the world. Head back to the start." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b1224" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/notfound-styles.css" />
+  <link rel="icon" type="image/png" href="/img/kafa.png" />
+</head>
+<body class="dark-mode">
+
+  <div class="crt-scanlines"></div>
+
+  <header>
+    <div class="logo"><a href="/index.html">erdal</a></div>
+    <div class="header-controls">
+      <button id="theme-toggle" class="control-btn" aria-label="Toggle day/night">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button id="menu-toggle" class="control-btn" aria-label="Open menu">
+        <div class="grid-icon">
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+          <div class="grid-dot"></div><div class="grid-dot"></div><div class="grid-dot"></div>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <nav id="main-nav" class="hidden">
+    <ul>
+      <li><a href="/index.html">home</a></li>
+      <li><a href="/about.html">about</a></li>
+      <li><a href="/projects.html">projects</a></li>
+      <li><a href="/contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="pixel-panel notfound-container">
+        <p class="page-label">error 404</p>
+        <h1 class="notfound-title">you walked off<br>the map.</h1>
+        <p class="notfound-text">
+          There's nothing built here yet. The world only has four places in it,
+          and this isn't one of them.
+        </p>
+        <div class="notfound-actions">
+          <a class="pixel-btn pixel-btn-accent" href="/index.html">&lt; back to world</a>
+          <a class="pixel-btn" href="/projects.html">projects &gt;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>erdal kaya · smu cs</span>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
