@@ -105,6 +105,7 @@ header {
   flex-shrink: 0;
 }
 .status-live     { color: var(--accent-2); }
+.status-request  { color: var(--muted); }
 .status-building { color: var(--accent); }
 .status-source   { color: var(--accent-3); }
 .status-archived { color: var(--muted); }
@@ -131,6 +132,15 @@ header {
   color: var(--muted);
   background: var(--slot-bg);
   border: 1px solid var(--muted);
+}
+
+.project-note {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  line-height: 1.55;
+  color: var(--muted);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
 }
 
 .project-links {
